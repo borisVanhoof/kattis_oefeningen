@@ -1,4 +1,4 @@
-SUBDIRS := $(shell find . -type d -maxdepth 1 ! -name .git ! -name .)
+SUBDIRS := $(shell find . -type d -maxdepth 1 ! -name ".git*" ! -name .)
 
 .RECIPEPREFIX = >
 
