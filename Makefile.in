@@ -1,0 +1,17 @@
+CFLAGS=-Wall -Werror
+
+.RECIPEPREFIX = >
+
+all: a.out
+
+a.out: main.c
+> @gcc $(CFLAGS) main.c
+
+run: a.out
+> @cat in | ./a.out | tee myout
+> @if [ -f out ]; then diff myout out; fi
+
+clean:
+> rm ./a.out myout
+
+.PHONY: all run clean

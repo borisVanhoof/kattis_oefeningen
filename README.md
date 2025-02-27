@@ -1,3 +1,7 @@
+disclaimer: all in/out and problems are from https://open.kattis.com/, I do not claim any ownership
+
+you may offer pull request for improvements
+
 ~/.bash_aliases
 ```
 # copy basic main.c to new dir, usage: kmkdir <new dir>
@@ -16,23 +20,7 @@ int main() {
 
 ~/.kattis/Makefile
 ```
-CFLAGS=-Wall -Werror
-
-.RECIPEPREFIX = >
-
-all: a.out
-
-a.out: main.c
-> @gcc $(CFLAGS) main.c
-
-run: a.out
-> @cat in | ./a.out | tee myout
-> @[ -f out ] && diff myout out
-
-clean:
-> rm ./a.out myout
-
-.PHONY: all run clean
+include ../Makefile.in
 ```
 
 ~/.vimrc
