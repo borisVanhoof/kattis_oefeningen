@@ -1,3 +1,7 @@
+disclaimer: all in/out and problems are from https://open.kattis.com/, I do not claim any ownership
+
+you may offer pull request for improvements
+
 ~/.bash_aliases
 ```
 # copy basic main.c to new dir, usage: kmkdir <new dir>
