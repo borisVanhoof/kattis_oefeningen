@@ -1,8 +1,8 @@
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Werror -fsanitize=address -g
 
 .RECIPEPREFIX = >
 
-all: a.out
+all: run
 
 a.out: main.c
 > @gcc $(CFLAGS) main.c
