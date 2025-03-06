@@ -1,4 +1,6 @@
 myout
 a.out
+b.out
 *.swp
 my_out
+*.test

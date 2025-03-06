@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main() {
-  int min, max, n, sample, count = 0;
+  int min = 0, max = 0, n, sample, count = 0;
   while(scanf("%d", &n) == 1) {
     for(int i = 0; i < n; i++) {
       scanf("%d", &sample);
