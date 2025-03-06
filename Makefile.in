@@ -1,17 +1,19 @@
-CFLAGS=-Wall -Werror -fsanitize=address -g
+CFLAGS=-Wall -Werror -Wno-unused-result
+LDFLAGS=-lm
 
 .RECIPEPREFIX = >
 
 all: run
 
 a.out: main.c
-> @gcc $(CFLAGS) main.c
+> @gcc $(CFLAGS) -fsanitize=address,undefined -O2 main.c $(LDFLAGS)
+> @gcc $(CFLAGS) -DTEST -g main.c -o b.out $(LDFLAGS)
 
 run: a.out
 > @cat in | ./a.out | tee myout
 > @if [ -f out ]; then diff myout out; fi
 
 clean:
-> rm ./a.out myout
+> rm *.out myout *.test
 
 .PHONY: all run clean
