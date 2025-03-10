@@ -5,7 +5,7 @@ SUBDIRS := $(shell find . -maxdepth 1 -type d ! -name "\.*")
 all: run
 
 run:
-> @for dir in $(SUBDIRS); do make -C $$dir $@ > /dev/null || exit 1; done
+> @for dir in $(SUBDIRS); do make -C $$dir > /dev/null || exit 1; done
 
 clean:
 > @for dir in $(SUBDIRS); do make -C $$dir $@; done
