@@ -1,19 +1,21 @@
 CFLAGS=-Wall -Werror -Wno-unused-result
 LDFLAGS=-lm
+INPUTS := $(wildcard in[0-9]*)
+OUTPUTS := $(patsubst in%,myout%,$(INPUTS))
 
 .RECIPEPREFIX = >
 
-all: run
+all: $(OUTPUTS)
 
 a.out: main.c
 > @gcc $(CFLAGS) -fsanitize=address,undefined -O2 main.c $(LDFLAGS)
 > @gcc $(CFLAGS) -DTEST -g main.c -o b.out $(LDFLAGS)
 
-run: a.out
-> @cat in | ./a.out | tee myout
-> @if [ -f out ]; then diff myout out; fi
+myout%: in% a.out
+> @cat $< | ./a.out | tee $@
+> @if [ -f out$* ]; then diff $@ out$*; fi
 
 clean:
-> rm *.out myout *.test
+> @rm -f *.out myout* *.test
 
-.PHONY: all run clean
+.PHONY: all clean

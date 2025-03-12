@@ -3,7 +3,7 @@ disclaimer: all in/out and problems are from https://open.kattis.com/, I do not 
 you may offer pull request for improvements
 
 ```
-./kattis.py <name of challange>
+. ./kattis.sh <name of challange>
 ```
 
 ~/.vimrc
