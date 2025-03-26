@@ -14,3 +14,5 @@ mkdir $DEST
 cp -R $SRC $DEST
 
 cd $DEST
+
+echo https://open.kattis.com/problems/$1
