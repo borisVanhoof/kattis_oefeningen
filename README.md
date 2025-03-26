@@ -2,9 +2,15 @@ disclaimer: all in/out and problems are from https://open.kattis.com/, I do not 
 
 you may offer pull request for improvements
 
+workflow:
 ```
 . ./kattis.sh <name of challange>
 ```
+then copy examples to in[0-9] and out[0-9] and start editing main.c, when ready run:
+```
+make
+```
+
 
 ~/.vimrc
 ```
