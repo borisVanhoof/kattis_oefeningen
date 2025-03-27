@@ -1,2 +1,2 @@
-#include <stdio.h>
-int main(){char w[31],*c;scanf("%s",w);c=w;while(*c&&(*(c++)!='s'||*c!='s'));printf("%shiss\n",*c?"":"no ");}
+#include<stdio.h>
+int main(){char w[99],*c=w;for(scanf("%s",w);*c&&(*(c++)!='s'||*c!='s'););printf(&"no hiss\n"[*c?3:0]);}
